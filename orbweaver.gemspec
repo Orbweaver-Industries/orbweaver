@@ -5,7 +5,7 @@ require 'orbweaver/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "orbweaver"
-  spec.version       = Orbweaver::VERSION
+  spec.version       = Orbweaver.version
   spec.authors       = ["Dean Brundage"]
   spec.email         = ["dean@deanandadie.net"]
 
@@ -22,5 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "guard-rspec"
 
-  spec.add_runtime_dependency 'ruby-pcap'
+  spec.add_runtime_dependency 'ffi-pcap'
+
 end
