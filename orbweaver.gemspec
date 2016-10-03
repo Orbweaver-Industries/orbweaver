@@ -23,5 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec"
 
   spec.add_runtime_dependency 'ffi-pcap'
+  spec.add_runtime_dependency 'packetfu'
 
 end

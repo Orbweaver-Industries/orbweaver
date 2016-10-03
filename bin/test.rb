@@ -3,6 +3,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'orbweaver'
 
-c = Orbweaver::Capture.new device: 'wlp2s0'
+h = Orbweaver::PacketHandler::EthernetAddress.new
+c = Orbweaver::Capture::IP.new device: ARGV[0]
+c.add_handler h
 
-c.capture
+c.capture 
