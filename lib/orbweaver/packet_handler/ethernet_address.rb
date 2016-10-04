@@ -1,11 +1,9 @@
 module Orbweaver
   class PacketHandler
     class EthernetAddress < Generic
-
       def handle(packet)
-puts "Packet!"
+        puts packet.src
       end
-
     end
   end
 end

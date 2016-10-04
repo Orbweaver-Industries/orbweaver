@@ -1,4 +1,4 @@
-require 'ffi/pcap'
+require 'pcap'
 
 module Orbweaver
   class Capture
@@ -6,19 +6,19 @@ module Orbweaver
 
       attr_reader :pcap
 
-      def initialize(device: nil, pcap: nil)
+      def initialize(device: nil, pcap: nil, snaplen: 1516)
         super
-        @device = device
-        @pcap = pcap || FFI::PCap::Live.new( device: @device )
+        @pcap = pcap || ::Pcap::Capture.open_live(device, snaplen)
       end
 
 
-      def capture(opts={},&block)
+      def capture(&block)
         if block_given?
           @pcap.loop(opts) &block
         else
           while capturing do
-            @pcap.loop(opts) do |this,pkt|
+            @pcap.each_packet do |pkt|
+              pkt = Orbweaver::Pcap::Ethernet.from_bytes(pkt.raw_data)
               @handlers.each { |h| h.handle(pkt) }
             end
           end

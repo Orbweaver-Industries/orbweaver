@@ -29,14 +29,14 @@ module Orbweaver
 
     autoload :Header, 'orbweaver/pcap/header'
     autoload :Pkthdr, 'orbweaver/pcap/pkthdr'
-    autoload :Packet 'orbweaver/pcap/packet'
+    autoload :Packet, 'orbweaver/pcap/packet'
     autoload :Ethernet, 'orbweaver/pcap/ethernet'
     autoload :IP, 'orbweaver/pcap/ip'
     autoload :IPv4, 'orbweaver/pcap/ipv4'
     autoload :IPv6, 'orbweaver/pcap/ipv6'
     autoload :TCP, 'orbweaver/pcap/tcp'
     autoload :UDP, 'orbweaver/pcap/udp'
-    autoload :SCTP 'orbweaver/pcap/sctp'
+    autoload :SCTP, 'orbweaver/pcap/sctp'
 
     LITTLE_ENDIAN = 0xd4c3b2a1
     BIG_ENDIAN    = 0xa1b2c3d4
