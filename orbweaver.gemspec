@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-rspec'
   spec.add_development_dependency 'hexdump'
 
-  spec.add_runtime_dependency 'ruby-pcap'
+#  spec.add_runtime_dependency 'ruby-pcap'
+  spec.add_runtime_dependency 'packetfu'
 
 end

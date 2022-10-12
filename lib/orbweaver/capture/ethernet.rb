@@ -1,14 +1,14 @@
-require 'pcap'
+require 'packetfu'
 
 module Orbweaver
   class Capture
-    class IP < Orbweaver::Capture::Generic
+    class Ethernet < Orbweaver::Capture::Generic
 
       attr_reader :pcap
 
-      def initialize(device: nil, pcap: nil, snaplen: 1516)
+      def initialize(device: nil, pcap: nil, snaplen: nil)
         super
-        @pcap = pcap || ::Pcap::Capture.open_live(device, snaplen)
+        @pcap = pcap || ::PacketFu::Capture.new(iface: device, snaplen: snaplen)
       end
 
 

@@ -1,5 +1,5 @@
 require 'orbweaver/version'
-require 'pcap/packet'
+#require 'pcap/packet'
 
 module Orbweaver
 
